@@ -5,7 +5,7 @@
 /* Step 2 - Variables */
 const fullName = 'Jackson Kendall';
 const currentYear = new Date().getFullYear();
-const profilePicture = 'images/profile pic.jpg';
+const profilePicture = 'images/profile.jpg';
 
 /* Step 3 - Element Variables */
 const nameElement = document.getElementById('name');
