@@ -47,4 +47,4 @@ myProfile.placesLived.forEach(place => {
     let dd = document.createElement('dd');
     dd.textContent = place.length;
     document.querySelector('places-lived').appendChild(dd);
-})
+});
