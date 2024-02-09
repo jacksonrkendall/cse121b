@@ -17,7 +17,7 @@ const displayTemples = (temples) => {
         h3.textContent = temple.templeName;
         /*Create an HTML <img> element and add the temple's imageUrl property to the src attribute and the temple's location property to the alt attribute.*/
         const img = document.createElement('img');
-        img.scr = temple.imageUrl;
+        img.src = temple.imageUrl;
         img.alt = temple.location;
          /*Append the <h3> element and the <img> element to the <article> element as children. (appendChild)*/
         article.appendChild(h3);
@@ -39,11 +39,29 @@ displayTemples(templeList);
 getTemples();
 console.log(templeList);
 /* reset Function */
-
-
+const reset = () => {
+templesElement.innerHTML = ' ';
+}
 /* filterTemples Function */
-
-
-getTemples();
-
+const filterTemples = (temples) => {
+    reset();
+    const filter = document.getElementById('filtered').value;
+    switch (filter) {
+        case 'utah':
+            displayTemples(temples.filter(temple => temple.location.includes('Utah')));
+            break;
+        case 'nonutah':
+            displayTemples(temples.filter(temple => !temple.location.includes('Utah')));
+            break;
+        case 'older':
+            // Filter for temples where the dedicated date is before 1950
+            displayTemples(temples.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1)));
+            break;
+        case 'all':
+            displayTemples(temples);
+            break;
+    }
+};
 /* Event Listener */
+document.querySelector("#filtered").addEventListener("change", () => {filterTemples(templeList)});
+getTemples();
