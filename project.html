@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="/styles/project.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecast</h1>
+        <p>Welcome to my final project. Here you can get weather information for the location of your choice. </p>
+        <input type="text" id="locationInput" placeholder="Enter location">
+        <select id="unitSelect">
+            <option value="imperial" selected>Fahrenheit</option>
+            <option value="metric">Celsius</option>
+        </select>        
+        <button id="getWeatherBtn">Get Weather</button>
+        <div id="weatherInfo"></div>
+    </div>
+    <script src="scripts/project.js"></script>
+</body>
+</html>
